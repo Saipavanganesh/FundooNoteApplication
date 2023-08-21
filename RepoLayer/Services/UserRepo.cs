@@ -67,5 +67,17 @@ namespace RepoLayer.Services
             var token = new JwtSecurityToken(_configuration["JwtSettings:Issuer"], _configuration["JwtSettings:Audience"], claims, DateTime.Now, DateTime.Now.AddHours(1), creds);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        public string ForgotPassword(ForgotPasswordModel forgotPasswordModel)
+        {
+            var userEntity = _fundooContext.User.FirstOrDefault(u => u.Email == forgotPasswordModel.Email);
+            if (userEntity != null)
+            {
+                var token = GenerateJwtToken(userEntity.Email, userEntity.UserId);
+                MSMQ msmq = new MSMQ();
+                msmq.SendData2Queue(token);
+                return token;
+            }
+            return null;
+        }
     }
 }

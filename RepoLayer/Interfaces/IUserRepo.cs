@@ -11,5 +11,6 @@ namespace RepoLayer.Interfaces
     {
         public Users UserRegistration(UserRegisterModel userRegisterModel);
         public string UserLogin(UserLoginModel model);
+        public string ForgotPassword(ForgotPasswordModel forgotPasswordModel);
     }
 }

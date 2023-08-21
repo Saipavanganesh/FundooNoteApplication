@@ -44,5 +44,20 @@ namespace Fundoo_Application.Controllers
                 return this.BadRequest(new { success = false, message = "User Login Unsuccessful", data = result });
             }
         }
+        [HttpPost]
+        [Route("forgotPassword")]
+
+        public IActionResult ForgotPwd(ForgotPasswordModel forgotPasswordModel)
+        {
+            var result = _userBusiness.ForgotPassword(forgotPasswordModel);
+            if (result != null)
+            {
+                return this.Ok(new { success = true, message = "Token Sent", data = result });
+            }
+            else
+            {
+                return this.BadRequest(new { success = false, message = "Something went wrong", data = result });
+            }
+        }
     }
 }
