@@ -16,7 +16,10 @@ using RepoLayer.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Fundoo_Application
 {
@@ -41,6 +44,27 @@ namespace Fundoo_Application
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FunDoNote", Version = "v1" });
+            });
+
+            var jwtSettings = Configuration.GetSection("JwtSettings");
+            var key = Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]);
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["JwtSettings:Issuer"],
+                    ValidAudience = Configuration["JwtSettings:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                };
             });
         }
 
