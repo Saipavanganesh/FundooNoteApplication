@@ -1,0 +1,16 @@
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\RepoLayer.deps.json
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\RepoLayer.runtimeconfig.json
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\RepoLayer.runtimeconfig.dev.json
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\RepoLayer.dll
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\RepoLayer.pdb
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.csproj.AssemblyReference.cache
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.AssemblyInfoInputs.cache
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.AssemblyInfo.cs
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.csproj.CoreCompileInputs.cache
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.dll
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.pdb
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.genruntimeconfig.cache
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+D:\C#\Fundoo Application\RepoLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+D:\C#\Fundoo Application\RepoLayer\obj\Debug\netcoreapp3.1\RepoLayer.csproj.CopyComplete

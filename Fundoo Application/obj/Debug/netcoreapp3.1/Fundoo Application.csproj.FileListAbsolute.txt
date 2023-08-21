@@ -1,0 +1,51 @@
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\appsettings.json
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Fundoo Application.exe
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Fundoo Application.deps.json
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Fundoo Application.runtimeconfig.json
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Fundoo Application.runtimeconfig.dev.json
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Fundoo Application.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Fundoo Application.pdb
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.csproj.AssemblyReference.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.AssemblyInfoInputs.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.AssemblyInfo.cs
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.csproj.CoreCompileInputs.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.MvcApplicationPartsAssemblyInfo.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\staticwebassets\Fundoo Application.StaticWebAssets.Manifest.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\staticwebassets\Fundoo Application.StaticWebAssets.Pack.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.Fundoo Application.Microsoft.AspNetCore.StaticWebAssets.props
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.Fundoo Application.props
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.Fundoo Application.props
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.Fundoo Application.props
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.RazorTargetAssemblyInfo.cache
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.csproj.CopyComplete
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.dll
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.pdb
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.genruntimeconfig.cache
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\BusinessLayer.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\CommonLayer.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\RepoLayer.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\RepoLayer.pdb
