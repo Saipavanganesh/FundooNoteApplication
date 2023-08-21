@@ -49,3 +49,8 @@ D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\RepoLayer.dl
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\CommonLayer.pdb
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\RepoLayer.pdb
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\C#\Fundoo Application\Fundoo Application\obj\Debug\netcoreapp3.1\Fundoo Application.MvcApplicationPartsAssemblyInfo.cs
