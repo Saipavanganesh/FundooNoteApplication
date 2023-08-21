@@ -48,5 +48,16 @@ namespace BusinessLayer.Services
                 throw;
             }
         }
+        public bool ResetPassword(string Email, string NewPassword, string ConfirmPassword)
+        {
+            try
+            {
+                return _UserRepo.ResetPassword(Email, NewPassword, ConfirmPassword);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
