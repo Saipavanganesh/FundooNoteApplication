@@ -63,3 +63,4 @@ D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Id
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Experimental.System.Messaging.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll

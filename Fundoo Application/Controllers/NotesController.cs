@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace Fundoo_Application.Controllers
 {
@@ -97,6 +98,97 @@ namespace Fundoo_Application.Controllers
             {
                 return BadRequest(new { succes = false, message = "Something went wrong", data = result });
             }
+        }
+        [HttpPost]
+        [Route("archive")]
+        [Authorize]
+        public IActionResult Archive(int notesId)
+        {
+            long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
+            var result = notesBusiness.Archive(notesId);
+            if (result)
+            {
+                return Ok(new { succes = true, message = "Notes Archived", data = result });
+            }
+            else
+            {
+                return BadRequest(new { succes = false, message = "Notes Unarchived", data = result });
+            }
+        }
+        [HttpPost]
+        [Route("pin")]
+        [Authorize]
+        public IActionResult Pin(int notesId)
+        {
+            long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
+            var result = notesBusiness.Pin(notesId);
+            if (result)
+            {
+                return Ok(new { succes = true, message = "Notes Pinned", data = result });
+            }
+            else
+            {
+                return BadRequest(new { succes = false, message = "Notes Unpinned", data = result });
+            }
+        }
+        [HttpPost]
+        [Route("trash")]
+        [Authorize]
+        public IActionResult Trash(int notesId)
+        {
+            long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
+            var result = notesBusiness.Trash(notesId);
+            if (result)
+            {
+                return Ok(new { succes = true, message = "Notes Trashed", data = result });
+            }
+            else
+            {
+                return BadRequest(new { succes = false, message = "Notes Not Trashed", data = result });
+            }
+        }
+        [HttpPost]
+        [Route("color")]
+        [Authorize]
+        public IActionResult Color(int notesId, string color)
+        {
+            long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
+            var result = notesBusiness.Color(notesId, color);
+            if (result != null)
+            {
+                return Ok(new { succes = true, message = $"Color is {color}", data = result });
+            }
+            else
+            {
+                return BadRequest(new { succes = false, message = "Something went wrong...", data = result });
+            }
+        }
+        [HttpPost]
+        [Route("uploadImage")]
+        [Authorize]
+        public async Task<IActionResult> AddImage(int notesId, IFormFile imageFile)
+        {
+            try
+            {
+                long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
+                if (userId != null)
+                {
+                    var result = await notesBusiness.AddImage(notesId, userId, imageFile);
+                    if (result.Item1 == 1)
+                    {
+                        return Ok(new { success = true, message = "Image uploaded Successfully" });
+                    }
+                    else
+                    {
+                        return BadRequest(new { success = false, message = result.Item2 });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { success = false, messaage = "Error Occurred : " + ex.Message });
+            }
+            return null;
         }
     }
 }

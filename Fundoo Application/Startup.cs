@@ -20,6 +20,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
+using CloudinaryDotNet;
 
 namespace Fundoo_Application
 {
@@ -41,6 +42,7 @@ namespace Fundoo_Application
             services.AddTransient<IUserRepo, UserRepo>();
             services.AddTransient<INotesBusiness, NotesBusiness>();
             services.AddTransient<INotesRepo, NotesRepo>();
+            services.AddTransient<FileService, FileService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -87,6 +89,15 @@ namespace Fundoo_Application
                     IssuerSigningKey = new SymmetricSecurityKey(key)
                 };
             });
+            //Cloudinary
+            IConfigurationSection cloudinarySettings = Configuration.GetSection("CloudinarySettings");
+            Account cloudinaryAccount = new Account(
+                cloudinarySettings["CloudName"],
+                cloudinarySettings["ApiKey"],
+                cloudinarySettings["ApiSecret"]
+            );
+            Cloudinary cloudinary = new Cloudinary(cloudinaryAccount);
+            services.AddSingleton(cloudinary);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
