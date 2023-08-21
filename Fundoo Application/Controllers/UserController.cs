@@ -15,6 +15,7 @@ namespace Fundoo_Application.Controllers
         {
             _userBusiness = userBusiness;
         }
+
         [HttpPost]
         [Route("registration")]
         public IActionResult Registration(UserRegisterModel userRegisterModel)
@@ -27,6 +28,20 @@ namespace Fundoo_Application.Controllers
             else
             {
                 return this.BadRequest(new { success = false, message = "User Registration Unsuccessful", data = result });
+            }
+        }
+        [HttpPost]
+        [Route("login")]
+        public IActionResult UserLogin(UserLoginModel model)
+        {
+            var result = _userBusiness.UserLogin(model);
+            if (result != null)
+            {
+                return this.Ok(new { success = true, message = "User Login Successful", data = result });
+            }
+            else
+            {
+                return this.BadRequest(new { success = false, message = "User Login Unsuccessful", data = result });
             }
         }
     }
