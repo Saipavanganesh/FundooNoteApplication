@@ -107,6 +107,7 @@ namespace Fundoo_Application
             Cloudinary cloudinary = new Cloudinary(cloudinaryAccount);
             services.AddSingleton(cloudinary);
 
+
             //Redis
             services.AddStackExchangeRedisCache(options =>
             {

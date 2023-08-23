@@ -5955,6 +5955,7 @@
       "MassTransit >= 8.1.0",
       "MassTransit.AspNetCore >= 7.3.1",
       "MassTransit.RabbitMQ >= 8.1.0",
+      "Microsoft.Extensions.Caching.StackExchangeRedis >= 3.1.0",
       "Microsoft.Extensions.Configuration.Json >= 7.0.0",
       "Microsoft.Extensions.DependencyInjection >= 7.0.0",
       "RabbitMQ.Client >= 6.5.0",
@@ -6015,6 +6016,10 @@
           "MassTransit.RabbitMQ": {
             "target": "Package",
             "version": "[8.1.0, )"
+          },
+          "Microsoft.Extensions.Caching.StackExchangeRedis": {
+            "target": "Package",
+            "version": "[3.1.0, )"
           },
           "Microsoft.Extensions.Configuration.Json": {
             "target": "Package",
