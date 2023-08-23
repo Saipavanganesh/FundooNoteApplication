@@ -48,18 +48,9 @@ namespace RepoLayer.Services
                 throw ex;
             }
         }
-        public List<NotesEntity> GetAllNotes()
+        public List<NotesEntity> GetAllNotes(long userId)
         {
-            try
-            {
-                List<NotesEntity> notesList = new List<NotesEntity>();
-                notesList = fundooContext.Notes.ToList();
-                return notesList;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return fundooContext.Notes.Where(note => note.UserId == userId).ToList();
         }
         public List<NotesEntity> GetNotesById(int notesId)
         {
@@ -122,11 +113,11 @@ namespace RepoLayer.Services
             }
 
         }
-        public bool Archive(int notesId)
+        public bool Archive(int notesId, long userId)
         {
             try
             {
-                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId);
+                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId && u.UserId == userId);
                 if (notes != null)
                 {
                     notes.IsArchive = true;
@@ -142,11 +133,11 @@ namespace RepoLayer.Services
             }
         }
 
-        public bool Pin(int notesId)
+        public bool Pin(int notesId, long userId)
         {
             try
             {
-                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId);
+                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId && u.UserId == userId);
                 if (notes != null)
                 {
                     notes.IsArchive = true;
@@ -162,11 +153,11 @@ namespace RepoLayer.Services
             }
         }
 
-        public bool Trash(int notesId)
+        public bool Trash(int notesId, long userId)
         {
             try
             {
-                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId);
+                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId && u.UserId == userId);
                 if (notes != null)
                 {
                     notes.IsArchive = true;
@@ -181,11 +172,11 @@ namespace RepoLayer.Services
                 throw ex;
             }
         }
-        public string Color(int notesId, string color)
+        public string Color(int notesId, long userId, string color)
         {
             try
             {
-                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId);
+                var notes = fundooContext.Notes.FirstOrDefault(u => u.NotesId == notesId && u.UserId == userId);
                 if (notes != null)
                 {
                     return color;

@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Newtonsoft.Json;
+using FundooSub.Models;
 
 namespace RepoLayer.Services
 {
@@ -18,10 +20,12 @@ namespace RepoLayer.Services
     {
         private readonly FundooContext _fundooContext;
         private readonly IConfiguration _configuration;
-        public UserRepo(FundooContext fundooContext, IConfiguration configuration)
+        private readonly RabbitMQPublisher _rabbitMQPublisher;
+        public UserRepo(FundooContext fundooContext, IConfiguration configuration, RabbitMQPublisher rabbitMQPublisher)
         {
             this._fundooContext = fundooContext;
             this._configuration = configuration;
+            this._rabbitMQPublisher = rabbitMQPublisher;
         }
         public Users UserRegistration(UserRegisterModel userRegisterModel)
         {
@@ -33,7 +37,17 @@ namespace RepoLayer.Services
             users.Password = userRegisterModel.Password;
             _fundooContext.User.Add(users);
             _fundooContext.SaveChanges();
-            return users;
+            if (users != null)
+            {
+                var message = new UserRegistrationMessage { Email = users.Email };
+                var messageJson = JsonConvert.SerializeObject(message);
+                _rabbitMQPublisher.PublishMessage("User-Registration-Queue", messageJson);
+                // Example of sending a message to the RabbitMQ queue
+                // Print a message to the console to verify
+                Console.WriteLine($"Message sent to queue: {messageJson}");
+                return users;
+            }
+            return null;
         }
         public string UserLogin(UserLoginModel model)
         {
@@ -43,7 +57,7 @@ namespace RepoLayer.Services
                 if (userEntity != null)
                 {
                     var token = GenerateJwtToken(userEntity.Email, userEntity.UserId);
-                    return token;                   
+                    return token;
                 }
                 else
                 {

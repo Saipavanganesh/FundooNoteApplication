@@ -28,11 +28,11 @@ namespace BusinessLayer.Services
                 throw ex;
             }
         }
-        public List<NotesEntity> GetAllNotes()
+        public List<NotesEntity> GetAllNotes(long userId)
         {
             try
             {
-                return notesRepo.GetAllNotes();
+                return notesRepo.GetAllNotes(userId);
             }
             catch (Exception ex)
             {
@@ -72,44 +72,44 @@ namespace BusinessLayer.Services
                 throw ex;
             }
         }
-        public bool Archive(int notesId)
+        public bool Archive(int notesId, long userId)
         {
             try
             {
-                return notesRepo.Archive(notesId);
+                return notesRepo.Archive(notesId,userId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public bool Pin(int notesId)
+        public bool Pin(int notesId, long userId)
         {
             try
             {
-                return notesRepo.Pin(notesId);
+                return notesRepo.Pin(notesId, userId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public bool Trash(int notesId)
+        public bool Trash(int notesId, long userId)
         {
             try
             {
-                return notesRepo.Trash(notesId);
+                return notesRepo.Trash(notesId, userId);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-        public string Color(int notesId, string color)
+        public string Color(int notesId, long userId, string color)
         {
             try
             {
-                return notesRepo.Color(notesId, color);
+                return notesRepo.Color(notesId, userId, color);
             }
             catch (Exception ex)
             {

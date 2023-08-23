@@ -21,6 +21,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Threading.Tasks;
 using Microsoft.IdentityModel.Tokens;
 using CloudinaryDotNet;
+using RabbitMQ.Client;
+using CommonLayer.Models;
 
 namespace Fundoo_Application
 {
@@ -44,6 +46,12 @@ namespace Fundoo_Application
             services.AddTransient<INotesRepo, NotesRepo>();
             services.AddTransient<FileService, FileService>();
 
+            services.AddSingleton<RabbitMQPublisher>(_ => new RabbitMQPublisher(new ConnectionFactory
+            {
+                HostName = Configuration["RabbitMQSettings:HostName"],
+                UserName = Configuration["RabbitMQSettings:UserName"],
+                Password = Configuration["RabbitMQSettings:Password"]
+            }));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FunDoNote", Version = "v1" });
@@ -98,6 +106,12 @@ namespace Fundoo_Application
             );
             Cloudinary cloudinary = new Cloudinary(cloudinaryAccount);
             services.AddSingleton(cloudinary);
+
+            //Redis
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

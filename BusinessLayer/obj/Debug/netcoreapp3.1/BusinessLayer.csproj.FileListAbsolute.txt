@@ -13,3 +13,9 @@ D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\RepoLayer.pdb
 D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
 D:\C#\Fundoo Application\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.AssemblyReference.cache
 D:\C#\Fundoo Application\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CopyComplete
+D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\FundooSub.deps.json
+D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\FundooSub.runtimeconfig.json
+D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\FundooSub.runtimeconfig.dev.json
+D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\FundooSub.exe
+D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\FundooSub.dll
+D:\C#\Fundoo Application\BusinessLayer\bin\Debug\netcoreapp3.1\FundooSub.pdb

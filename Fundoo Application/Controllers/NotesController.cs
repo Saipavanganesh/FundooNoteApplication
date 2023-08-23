@@ -6,6 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.Memory;
+using RepoLayer.Context;
+using System.Collections.Generic;
+using RepoLayer.Entity;
+using Newtonsoft.Json;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fundoo_Application.Controllers
 {
@@ -14,9 +22,13 @@ namespace Fundoo_Application.Controllers
     public class NotesController : ControllerBase
     {
         private readonly INotesBusiness notesBusiness;
-        public NotesController(INotesBusiness notesBusiness)
+        private readonly IDistributedCache distributedCache;
+        private readonly FundooContext fundooContext;
+        public NotesController(INotesBusiness notesBusiness, IDistributedCache distributedCache, FundooContext fundooContext)
         {
             this.notesBusiness = notesBusiness;
+            this.distributedCache = distributedCache;
+            this.fundooContext = fundooContext;
         }
         [HttpPost]
         [Route("notes")]
@@ -34,13 +46,40 @@ namespace Fundoo_Application.Controllers
                 return BadRequest(new { succes = true, message = "Notes Created Successfully", data = result });
             }
         }
+        [HttpGet("redis")]
+        public async Task<IActionResult> GetAllCustomersUsingRedisCache()
+        {
+            var cacheKey = "notesList";
+            string serializednotesList;
+            var notesList = new List<NotesEntity>();
+            var redisnotesList = await distributedCache.GetAsync(cacheKey);
+            if (redisnotesList != null)
+            {
+                serializednotesList = Encoding.UTF8.GetString(redisnotesList);
+                notesList = JsonConvert.DeserializeObject<List<NotesEntity>>(serializednotesList);
+            }
+            else
+            {
+                notesList = await fundooContext.Notes.ToListAsync();
+                serializednotesList = JsonConvert.SerializeObject(notesList);
+                redisnotesList = Encoding.UTF8.GetBytes(serializednotesList);
+                var options = new DistributedCacheEntryOptions()
+                    .SetAbsoluteExpiration(DateTime.Now.AddMinutes(10))
+                    .SetSlidingExpiration(TimeSpan.FromMinutes(2));
+                await distributedCache.SetAsync(cacheKey, redisnotesList, options);
+            }
+            return Ok(notesList);
+        }
+
+
+
         [HttpGet]
         [Route("notes")]
         [Authorize]
         public IActionResult GetAllNotes()
         {
             long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
-            var result = notesBusiness.GetAllNotes();
+            var result = notesBusiness.GetAllNotes(userId);
             if (result != null)
             {
                 return Ok(new { succes = true, message = "Displaying Notes", data = result });
@@ -105,7 +144,7 @@ namespace Fundoo_Application.Controllers
         public IActionResult Archive(int notesId)
         {
             long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
-            var result = notesBusiness.Archive(notesId);
+            var result = notesBusiness.Archive(notesId, userId);
             if (result)
             {
                 return Ok(new { succes = true, message = "Notes Archived", data = result });
@@ -121,7 +160,7 @@ namespace Fundoo_Application.Controllers
         public IActionResult Pin(int notesId)
         {
             long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
-            var result = notesBusiness.Pin(notesId);
+            var result = notesBusiness.Pin(notesId, userId);
             if (result)
             {
                 return Ok(new { succes = true, message = "Notes Pinned", data = result });
@@ -137,7 +176,7 @@ namespace Fundoo_Application.Controllers
         public IActionResult Trash(int notesId)
         {
             long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
-            var result = notesBusiness.Trash(notesId);
+            var result = notesBusiness.Trash(notesId, userId);
             if (result)
             {
                 return Ok(new { succes = true, message = "Notes Trashed", data = result });
@@ -153,7 +192,7 @@ namespace Fundoo_Application.Controllers
         public IActionResult Color(int notesId, string color)
         {
             long userId = Convert.ToInt64(User.Claims.FirstOrDefault(x => x.Type == "UserId").Value);
-            var result = notesBusiness.Color(notesId, color);
+            var result = notesBusiness.Color(notesId, userId, color);
             if (result != null)
             {
                 return Ok(new { succes = true, message = $"Color is {color}", data = result });
