@@ -3,6 +3,6 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>D:\C#\Fundoo Application\Fundoo Application\Properties\PublishProfiles\fundoonoteapplication - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\C#\Fundoo Application\.github\workflows\fundoonoteapplication.yml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
