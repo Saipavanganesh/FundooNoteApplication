@@ -104,3 +104,8 @@ D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Ex
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\RabbitMQ.Client.Core.DependencyInjection.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Azure.Amqp.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Azure.ServiceBus.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Azure.Services.AppAuthentication.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
