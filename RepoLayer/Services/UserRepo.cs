@@ -35,7 +35,7 @@ namespace RepoLayer.Services
             users.DateOfBirth = userRegisterModel.DateOfBirth;
             users.Email = userRegisterModel.Email;
             users.Password = userRegisterModel.Password;
-            _fundooContext.User.Add(users);
+            _fundooContext.Users.Add(users);
             _fundooContext.SaveChanges();
             if (users != null)
             {
@@ -53,7 +53,7 @@ namespace RepoLayer.Services
         {
             try
             {
-                var userEntity = _fundooContext.User.FirstOrDefault(u => u.Email == model.Email && u.Password == model.Password);
+                var userEntity = _fundooContext.Users.FirstOrDefault(u => u.Email == model.Email && u.Password == model.Password);
                 if (userEntity != null)
                 {
                     var token = GenerateJwtToken(userEntity.Email, userEntity.UserId);
@@ -83,7 +83,7 @@ namespace RepoLayer.Services
         }
         public string ForgotPassword(ForgotPasswordModel forgotPasswordModel)
         {
-            var userEntity = _fundooContext.User.FirstOrDefault(u => u.Email == forgotPasswordModel.Email);
+            var userEntity = _fundooContext.Users.FirstOrDefault(u => u.Email == forgotPasswordModel.Email);
             if (userEntity != null)
             {
                 var token = GenerateJwtToken(userEntity.Email, userEntity.UserId);
@@ -99,12 +99,12 @@ namespace RepoLayer.Services
             {
                 if (NewPassword == ConfirmPassword)
                 {
-                    var Emailvalidity = _fundooContext.User.FirstOrDefault(u => u.Email == Email);
+                    var Emailvalidity = _fundooContext.Users.FirstOrDefault(u => u.Email == Email);
 
                     if (Emailvalidity != null)
                     {
                         Emailvalidity.Password = ConfirmPassword;
-                        _fundooContext.User.Update(Emailvalidity);
+                        _fundooContext.Users.Update(Emailvalidity);
                         _fundooContext.SaveChanges();
                         return true;
 

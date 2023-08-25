@@ -161,6 +161,10 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "Microsoft.Azure.ServiceBus": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[3.1.0, )"
@@ -268,6 +272,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Microsoft.Azure.ServiceBus": {
+              "target": "Package",
+              "version": "[5.2.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

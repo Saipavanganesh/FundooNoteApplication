@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\CommonLayer",
     "\\CommonLayer\\Models"
   ],
-  "SelectedNode": "\\Fundoo Application.sln",
+  "SelectedNode": "\\CommonLayer\\Models\\UserRegisterModel.cs",
   "PreviewInSolutionExplorer": false
 }

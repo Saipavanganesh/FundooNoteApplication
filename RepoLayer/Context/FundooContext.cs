@@ -13,7 +13,7 @@ namespace RepoLayer.Context
         {
 
         }
-        public DbSet<Users> User { get; set; }
+        public DbSet<Users> Users { get; set; }
         public DbSet<NotesEntity> Notes { get; set; }
     }
 }

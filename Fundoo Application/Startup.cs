@@ -122,10 +122,10 @@ namespace Fundoo_Application
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseAuthentication();
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

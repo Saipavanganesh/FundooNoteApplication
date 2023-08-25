@@ -46,7 +46,7 @@ namespace Fundoo_Application.Controllers
                 return BadRequest(new { succes = true, message = "Notes Created Successfully", data = result });
             }
         }
-
+        [Authorize]
         [HttpGet("redis")]
         public async Task<IActionResult> GetAllCustomersUsingRedisCache()
         {
