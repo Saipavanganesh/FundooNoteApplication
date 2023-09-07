@@ -2,6 +2,66 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Azure.Core/1.34.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Memory.Data": "1.0.2",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.7.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/netcoreapp2.1/Azure.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/Azure.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Azure.Core.Amqp/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Amqp": "2.6.1",
+          "System.Memory": "4.5.4",
+          "System.Memory.Data": "1.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Core.Amqp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Core.Amqp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Azure.Messaging.ServiceBus/7.16.1": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.34.0",
+          "Azure.Core.Amqp": "1.3.0",
+          "Microsoft.Azure.Amqp": "2.6.2",
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.Memory.Data": "1.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Messaging.ServiceBus.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Messaging.ServiceBus.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CloudinaryDotNet/1.22.0": {
         "type": "package",
         "dependencies": {
@@ -194,17 +254,17 @@
           }
         }
       },
-      "Microsoft.Azure.Amqp/2.4.11": {
+      "Microsoft.Azure.Amqp/2.6.2": {
         "type": "package",
-        "dependencies": {
-          "System.Net.WebSockets.Client": "4.0.2",
-          "System.Runtime.Serialization.Primitives": "4.1.1"
-        },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Azure.Amqp.dll": {}
+          "lib/netstandard2.0/Microsoft.Azure.Amqp.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Azure.Amqp.dll": {}
+          "lib/netstandard2.0/Microsoft.Azure.Amqp.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Microsoft.Azure.ServiceBus/5.2.0": {
@@ -1985,6 +2045,23 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
+      "System.Memory.Data/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Net.Http/4.3.4": {
         "type": "package",
         "dependencies": {
@@ -2090,78 +2167,6 @@
         "compile": {
           "ref/netstandard1.3/System.Net.Sockets.dll": {
             "related": ".xml"
-          }
-        }
-      },
-      "System.Net.WebHeaderCollection/4.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
-        }
-      },
-      "System.Net.WebSockets/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Win32.Primitives": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Threading.Tasks": "4.0.11"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.WebSockets.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Net.WebSockets.dll": {}
-        }
-      },
-      "System.Net.WebSockets.Client/4.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.2",
-          "Microsoft.Win32.Primitives": "4.0.1",
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tracing": "4.1.0",
-          "System.Globalization": "4.0.11",
-          "System.Net.Primitives": "4.0.11",
-          "System.Net.WebHeaderCollection": "4.0.1",
-          "System.Net.WebSockets": "4.0.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.Handles": "4.0.1",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Security.Cryptography.X509Certificates": "4.1.0",
-          "System.Text.Encoding": "4.0.11",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.WebSockets.Client.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.3/System.Net.WebSockets.Client.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.Net.WebSockets.Client.dll": {
-            "assetType": "runtime",
-            "rid": "win"
           }
         }
       },
@@ -3212,6 +3217,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Azure.Messaging.ServiceBus": "7.16.1",
           "CloudinaryDotNet": "1.22.0",
           "CommonLayer": "1.0.0",
           "Experimental.System.Messaging": "1.1.0",
@@ -3240,6 +3246,62 @@
     }
   },
   "libraries": {
+    "Azure.Core/1.34.0": {
+      "sha512": "6dNpM8OlGO+5gvt97tHXBp9qWRFkimRFulupDSGRgyT3sje1kQNza1/EMYaDcolmNARPmVJo8+wgD6ReV9wG5Q==",
+      "type": "package",
+      "path": "azure.core/1.34.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.core.1.34.0.nupkg.sha512",
+        "azure.core.nuspec",
+        "azureicon.png",
+        "lib/net461/Azure.Core.dll",
+        "lib/net461/Azure.Core.xml",
+        "lib/net5.0/Azure.Core.dll",
+        "lib/net5.0/Azure.Core.xml",
+        "lib/net6.0/Azure.Core.dll",
+        "lib/net6.0/Azure.Core.xml",
+        "lib/netcoreapp2.1/Azure.Core.dll",
+        "lib/netcoreapp2.1/Azure.Core.xml",
+        "lib/netstandard2.0/Azure.Core.dll",
+        "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Core.Amqp/1.3.0": {
+      "sha512": "6GG4gyFkAuHtpBVkvj0wE5+lCM+ttsZlIWAipBkI+jlCUlTgrTiNUROBFnb8xuKoymVDw9Tf1W8RoKqgbd71lg==",
+      "type": "package",
+      "path": "azure.core.amqp/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.core.amqp.1.3.0.nupkg.sha512",
+        "azure.core.amqp.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Core.Amqp.dll",
+        "lib/netstandard2.0/Azure.Core.Amqp.xml"
+      ]
+    },
+    "Azure.Messaging.ServiceBus/7.16.1": {
+      "sha512": "8wlJPbfPnM6EksXeIlGiCDMpc8pD0Ps4PMa9ULI5NaCWlWJwmMPw8TxPAFkEknegvcnwGWkknbXhhTyWULYMoQ==",
+      "type": "package",
+      "path": "azure.messaging.servicebus/7.16.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.messaging.servicebus.7.16.1.nupkg.sha512",
+        "azure.messaging.servicebus.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Messaging.ServiceBus.dll",
+        "lib/netstandard2.0/Azure.Messaging.ServiceBus.xml"
+      ]
+    },
     "CloudinaryDotNet/1.22.0": {
       "sha512": "kdyqW/TDtBebidMp6Nr3CWb6TmpEBKBFFDq1vSnmr/Q2NV09oRZzaMhAhaZTYpN7TVQiYHRhPs9aPzSS6EBCoA==",
       "type": "package",
@@ -3423,21 +3485,25 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.Azure.Amqp/2.4.11": {
-      "sha512": "7x5fu2f6TLQDDJS0sY5qW8/daFwJaY9O75YvU8RcUfRzbug+9YGjXUBxoRrprgyi0jxdBAMQL05p1s783SOSFQ==",
+    "Microsoft.Azure.Amqp/2.6.2": {
+      "sha512": "6hQqWRiHRd9J6pGBlzQM9LBOWaO8xIsRVYs3olrDGqOkK7v9mgwz9rmrv+49FIbLEOGgkP9IKLnXdsA4Y8IIYw==",
       "type": "package",
-      "path": "microsoft.azure.amqp/2.4.11",
+      "path": "microsoft.azure.amqp/2.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "images/icon.png",
         "lib/monoandroid/Microsoft.Azure.Amqp.dll",
         "lib/net45/Microsoft.Azure.Amqp.dll",
+        "lib/net45/Microsoft.Azure.Amqp.xml",
         "lib/netstandard1.3/Microsoft.Azure.Amqp.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Amqp.xml",
         "lib/netstandard2.0/Microsoft.Azure.Amqp.dll",
+        "lib/netstandard2.0/Microsoft.Azure.Amqp.xml",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Microsoft.Azure.Amqp.dll",
         "lib/uap10.0/Microsoft.Azure.Amqp.dll",
         "lib/uap10.0/Microsoft.Azure.Amqp.pri",
-        "microsoft.azure.amqp.2.4.11.nupkg.sha512",
+        "microsoft.azure.amqp.2.6.2.nupkg.sha512",
         "microsoft.azure.amqp.nuspec"
       ]
     },
@@ -6848,6 +6914,24 @@
         "version.txt"
       ]
     },
+    "System.Memory.Data/1.0.2": {
+      "sha512": "JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
+      "type": "package",
+      "path": "system.memory.data/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "DotNetPackageIcon.png",
+        "README.md",
+        "lib/net461/System.Memory.Data.dll",
+        "lib/net461/System.Memory.Data.xml",
+        "lib/netstandard2.0/System.Memory.Data.dll",
+        "lib/netstandard2.0/System.Memory.Data.xml",
+        "system.memory.data.1.0.2.nupkg.sha512",
+        "system.memory.data.nuspec"
+      ]
+    },
     "System.Net.Http/4.3.4": {
       "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
       "type": "package",
@@ -7047,126 +7131,6 @@
         "ref/xamarinwatchos10/_._",
         "system.net.sockets.4.3.0.nupkg.sha512",
         "system.net.sockets.nuspec"
-      ]
-    },
-    "System.Net.WebHeaderCollection/4.0.1": {
-      "sha512": "XX2TIAN+wBSAIV51BU2FvvXMdstUa8b0FBSZmDWjZdwUMmggQSifpTOZ5fNH20z9ZCg2fkV1L5SsZnpO2RQDRQ==",
-      "type": "package",
-      "path": "system.net.webheadercollection/4.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/_._",
-        "lib/netstandard1.3/System.Net.WebHeaderCollection.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/_._",
-        "ref/netstandard1.3/System.Net.WebHeaderCollection.dll",
-        "ref/netstandard1.3/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/de/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/es/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/fr/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/it/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/ja/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/ko/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/ru/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.WebHeaderCollection.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.WebHeaderCollection.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.net.webheadercollection.4.0.1.nupkg.sha512",
-        "system.net.webheadercollection.nuspec"
-      ]
-    },
-    "System.Net.WebSockets/4.0.0": {
-      "sha512": "2KJo8hir6Edi9jnMDAMhiJoI691xRBmKcbNpwjrvpIMOCTYOtBpSsSEGBxBDV7PKbasJNaFp1+PZz1D7xS41Hg==",
-      "type": "package",
-      "path": "system.net.websockets/4.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Net.WebSockets.dll",
-        "lib/netstandard1.3/System.Net.WebSockets.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Net.WebSockets.dll",
-        "ref/netstandard1.3/System.Net.WebSockets.dll",
-        "ref/netstandard1.3/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/de/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/es/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/fr/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/it/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/ja/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/ko/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/ru/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.WebSockets.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.WebSockets.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.net.websockets.4.0.0.nupkg.sha512",
-        "system.net.websockets.nuspec"
-      ]
-    },
-    "System.Net.WebSockets.Client/4.0.2": {
-      "sha512": "NUCcDroX4lCQXgOrzlwIZ1u9YJ0krfyF0wk0ONnyLUmcQoEiYV2/OfUPRqUwQBbpH1BlGApkLgoQUwMqb5+c1g==",
-      "type": "package",
-      "path": "system.net.websockets.client/4.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Net.WebSockets.Client.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Net.WebSockets.Client.dll",
-        "ref/netstandard1.3/System.Net.WebSockets.Client.dll",
-        "ref/netstandard1.3/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/de/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/es/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/fr/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/it/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/ja/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/ko/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/ru/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.WebSockets.Client.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.WebSockets.Client.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netstandard1.3/System.Net.WebSockets.Client.dll",
-        "runtimes/win/lib/net46/System.Net.WebSockets.Client.dll",
-        "runtimes/win/lib/netcore50/System.Net.WebSockets.Client.dll",
-        "runtimes/win/lib/netstandard1.3/System.Net.WebSockets.Client.dll",
-        "system.net.websockets.client.4.0.2.nupkg.sha512",
-        "system.net.websockets.client.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {

@@ -109,3 +109,7 @@ D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Az
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.Azure.Services.AppAuthentication.dll
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
 D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Azure.Core.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Azure.Core.Amqp.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\Azure.Messaging.ServiceBus.dll
+D:\C#\Fundoo Application\Fundoo Application\bin\Debug\netcoreapp3.1\System.Memory.Data.dll

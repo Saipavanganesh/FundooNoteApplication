@@ -23,6 +23,7 @@ using Microsoft.IdentityModel.Tokens;
 using CloudinaryDotNet;
 using RabbitMQ.Client;
 using CommonLayer.Models;
+using Azure.Messaging.ServiceBus;
 
 namespace Fundoo_Application
 {
@@ -45,6 +46,21 @@ namespace Fundoo_Application
             services.AddTransient<INotesBusiness, NotesBusiness>();
             services.AddTransient<INotesRepo, NotesRepo>();
             services.AddTransient<FileService, FileService>();
+            services.AddTransient<MessageService, MessageService>();
+            services.AddCors( data =>
+            {
+                data.AddPolicy(
+                    name: "AllowOrigin",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
+
+            // services.AddTransient<ServiceBusClient, ServiceBusClient>();
+            //services.AddTransient<ServiceBusSender, ServiceBusSender>();
+            services.AddTransient<ServiceBusClient>(_ => new ServiceBusClient(Configuration["AzureServiceBus:AzureServiceBusConnectionString"]));
+            services.AddTransient<ServiceBusSender>(_ => _.GetService<ServiceBusClient>().CreateSender("passwordresetqueue"));
 
             services.AddSingleton<RabbitMQPublisher>(_ => new RabbitMQPublisher(new ConnectionFactory
             {
@@ -123,7 +139,7 @@ namespace Fundoo_Application
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
-
+            app.UseCors("AllowOrigin");
             app.UseRouting();
             app.UseAuthentication();
 

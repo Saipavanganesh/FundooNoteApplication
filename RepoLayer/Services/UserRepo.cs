@@ -21,11 +21,13 @@ namespace RepoLayer.Services
         private readonly FundooContext _fundooContext;
         private readonly IConfiguration _configuration;
         private readonly RabbitMQPublisher _rabbitMQPublisher;
-        public UserRepo(FundooContext fundooContext, IConfiguration configuration, RabbitMQPublisher rabbitMQPublisher)
+        private readonly MessageService _messageService;
+        public UserRepo(FundooContext fundooContext, IConfiguration configuration, RabbitMQPublisher rabbitMQPublisher, MessageService messageService)
         {
             this._fundooContext = fundooContext;
             this._configuration = configuration;
             this._rabbitMQPublisher = rabbitMQPublisher;
+            this._messageService = messageService;
         }
         public Users UserRegistration(UserRegisterModel userRegisterModel)
         {
@@ -39,12 +41,12 @@ namespace RepoLayer.Services
             _fundooContext.SaveChanges();
             if (users != null)
             {
-                var message = new UserRegistrationMessage { Email = users.Email };
+                /*var message = new UserRegistrationMessage { Email = users.Email };
                 var messageJson = JsonConvert.SerializeObject(message);
                 _rabbitMQPublisher.PublishMessage("User-Registration-Queue", messageJson);
                 // Example of sending a message to the RabbitMQ queue
                 // Print a message to the console to verify
-                Console.WriteLine($"Message sent to queue: {messageJson}");
+                Console.WriteLine($"Message sent to queue: {messageJson}");*/
                 return users;
             }
             return null;
@@ -87,8 +89,9 @@ namespace RepoLayer.Services
             if (userEntity != null)
             {
                 var token = GenerateJwtToken(userEntity.Email, userEntity.UserId);
-                MSMQ msmq = new MSMQ();
-                msmq.SendData2Queue(token);
+                _messageService.SendMessage2Queue(forgotPasswordModel.Email, token);
+                /*MSMQ msmq = new MSMQ();
+                msmq.SendData2Queue(token);*/
                 return token;
             }
             return null;
